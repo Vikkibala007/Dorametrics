@@ -8,18 +8,13 @@ from math import ceil
 
 GITLAB_URL = "https://gitlab.com"   
 PROJECT_ID = "73314485"             
-TOKEN = "glpat-2xFkaVaG7WrJA-_Ihn4oFW86MQp1Omh6eXRxCw.01.1204zur6d"  
-# JIRA_REGEX = r"[A-Z]+-\d+"        
+TOKEN = ""  
+       
 
 HEADERS = {"PRIVATE-TOKEN": TOKEN}
 
 
-# def get_deployments():
-#     """Fetch deployments for the project."""
-#     url = f"{GITLAB_URL}/api/v4/projects/{PROJECT_ID}/deployments"
-#     res = requests.get(url, headers=HEADERS)
-#     res.raise_for_status()
-#     return res.json()
+
 def get_deployments(environment="production"):
     """Fetch deployments for the project, filtered by environment."""
     url = f"{GITLAB_URL}/api/v4/projects/{PROJECT_ID}/deployments"
@@ -106,25 +101,7 @@ def main():
                 commit_msg = c.get("title", "")
                 print(f"       - {c['short_id']} {c['title']} ({c['created_at']})")
                 commit_dates.append(datetime.strptime(c["created_at"], "%Y-%m-%dT%H:%M:%S.%f%z"))
-                # jira_ids = re.findall(JIRA_REGEX, commit_msg)
-                # if jira_ids:
-                #     print(f"          Jira Issues: {', '.join(jira_ids)}")
-                #     for jira_id in jira_ids:
-                #        in_progress_time = get_jira_issue_in_progress_time(jira_id)
-                #        in_progress_time_1= datetime.strptime(deployment_completed_str, "%Y-%m-%dT%H:%M:%S.%f%z")
-                #        deployment_details_leadtime = get_deployment_details(dep_id)
-                #        deployment_completed_str_leadtime= deployment_details.get("deployable", {}).get("finished_at")
-                #        if deployment_completed_str_leadtime:
-                #           deployment_completed_leadtime = datetime.strptime(deployment_completed_str, "%Y-%m-%dT%H:%M:%S.%f%z")
-                #           lead_time_days = max(1, (deployment_completed_leadtime - in_progress_time_1 ).days)
-                #           print(f"     Lead Time (days): {lead_time_days}")
-                #        else:
-                #           print("     Deployment completion date not available or inprogress ")
-
-                    #    if in_progress_time:
-                    #       print(f"         {jira_id} moved to In Progress at: {in_progress_time}")
-                    #    else:
-                    #       print(f"         {jira_id} has not moved to In Progress yet")
+               
             
             if commit_dates:
                first_commit = min(commit_dates)

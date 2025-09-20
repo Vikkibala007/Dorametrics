@@ -8,7 +8,7 @@ from math import ceil
 
 GITLAB_URL = "https://gitlab.com"   
 PROJECT_ID = "73314485"             
-TOKEN = "glpat-2xFkaVaG7WrJA-_Ihn4oFW86MQp1Omh6eXRxCw.01.1204zur6d"  
+TOKEN = "ur git lab token"  
 JIRA_REGEX = r"[A-Z]+-\d+"        
 
 HEADERS = {"PRIVATE-TOKEN": TOKEN}

@@ -3,7 +3,7 @@ import requests
 # Jira configuration
 JIRA_URL = "https://balamurugan969820.atlassian.net"  # Jira base URL
 JIRA_EMAIL = "balamurugan969820@gmail.com"           # Jira email
-JIRA_API_TOKEN = "ATATT3xFfGF0YTs8CfU3BxsOK50po4fbpBsLwF2yq9NuFF4CceCaosor2agFbZSUhKmacLA6TzmuoTgOnrqd-LJYxv3JbOPn4RoyDedVFtDvlXfLU_TwQF_0cpXLhs8PX7vz84-8y4KXezfyac6lWPue0_bJGLdEAC38E8TwGQ7gZVp1XVxwogg=7F1ABC98"              # Jira API token
+JIRA_API_TOKEN = ""              # Jira API token
 
 JIRA_HEADERS = {
     "Accept": "application/json"
