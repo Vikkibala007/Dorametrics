@@ -1,8 +1,8 @@
 import requests
 
 # Jira configuration
-JIRA_URL = "https://balamurugan969820.atlassian.net"  # Jira base URL
-JIRA_EMAIL = "balamurugan969820@gmail.com"           # Jira email
+JIRA_URL = ""  # Jira base URL
+JIRA_EMAIL = ""           # Jira email
 JIRA_API_TOKEN = ""              # Jira API token
 
 JIRA_HEADERS = {
